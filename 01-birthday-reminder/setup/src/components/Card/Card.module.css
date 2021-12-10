@@ -1,0 +1,7 @@
+.card {
+  position: fixed;
+  background-color: white;
+  width: 35vw;
+  top: 20vh;
+  left: 35vw;
+}

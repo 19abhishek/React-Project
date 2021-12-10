@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
-import data from './data';
-import List from './List';
-function App() {
-  return <h2>reminder project setup</h2>;
-}
+import React, { useState } from "react";
+
+import Card from "./components/Card/Card";
+import List from "./List";
+
+const App = (props) => {
+  return (
+    <Card>
+      <List />
+    </Card>
+  );
+};
 
 export default App;
