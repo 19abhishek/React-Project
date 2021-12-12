@@ -3,7 +3,9 @@
   letter-spacing: 1.5;
   font-weight: bold;
   text-align: center;
-  position: fixed;
-  top: 5vh;
-  left: 40vw;
+}
+
+.tour {
+  width: 60vw;
+  background-color: white;
 }
