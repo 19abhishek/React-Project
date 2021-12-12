@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import Loading from "./Loading";
+import React from "react";
 import Tours from "./Tours";
 // ATTENTION!!!!!!!!!!
 // I SWITCHED TO PERMANENT DOMAIN

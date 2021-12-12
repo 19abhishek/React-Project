@@ -1,17 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 
 import classes from "./Tour.module.css";
-import Card from "./components/Card";
 import Button from "./components/Button";
 
 const Tour = (props) => {
   return (
     <>
       <img className={classes.img} src={props.image} alt="Place name" />
-      <span>{props.name}</span>
-      <span>{props.price}</span>
+      <div className={classes.title}>
+        <span>{props.name}</span>
+        <span>{props.price}</span>
+      </div>
       <p>{props.info}</p>
-      <Button>Not Interested</Button>
+      <Button className={classes.btn} onClick={props.remove}>
+        Not Interested
+      </Button>
     </>
   );
 };
