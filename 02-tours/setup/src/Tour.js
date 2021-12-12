@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-const Tour = () => {
+const Tour = (props) => {
   return <h2>tour component</h2>;
 };
 
