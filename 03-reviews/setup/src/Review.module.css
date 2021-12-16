@@ -1,0 +1,72 @@
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+.img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-left: 40%;
+  margin-top: 2vh;
+  display: inline-block;
+}
+.name {
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profession {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.review {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1rem;
+}
+
+button {
+  border: 0;
+  background-color: seashell;
+  cursor: pointer;
+}
+
+.btnContainer {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnContainer button {
+  width: 30px;
+  height: 30px;
+}
+
+.surprise {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.surprise button {
+  width: 7rem;
+  height: 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
