@@ -1,0 +1,9 @@
+* {
+  background-color: seashell;
+}
+.header {
+  font-size: 48px;
+  margin-top: 10vh;
+  margin-left: 37vw;
+  font-weight: bold;
+}

@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
-import people from './data';
-import { FaChevronLeft, FaChevronRight, FaQuoteRight } from 'react-icons/fa';
+import React, { useState } from "react";
+import reviews from "./data";
+import { FaChevronLeft, FaChevronRight, FaQuoteRight } from "react-icons/fa";
+import Card from "./components/Card";
 
 const Review = () => {
-  return <h2>review component</h2>;
+  console.log(reviews);
+  return <Card></Card>;
 };
 
 export default Review;
