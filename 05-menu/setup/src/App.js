@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
-import Menu from './Menu';
-import Categories from './Categories';
-import items from './data';
+import React, { useState } from "react";
+import Menu from "./Menu";
+import Categories from "./Categories";
 
 function App() {
-  return <h2>menu project setup</h2>;
+  return (
+    <main>
+      <header className="header">Our Menu</header>
+      <Categories />
+    </main>
+  );
 }
 
 export default App;
