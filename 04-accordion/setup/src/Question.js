@@ -1,16 +1,19 @@
 import React, { useState } from "react";
-import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+
 import questions from "./data";
 import QuestionCard from "./components/QuestionCard";
+import classes from "./Question.module.css";
 const Question = () => {
-  return (
-    <>
-      <QuestionCard>question component</QuestionCard>
-      <QuestionCard>question component</QuestionCard>
-      <QuestionCard>question component</QuestionCard>
-      <QuestionCard>question component</QuestionCard>
-    </>
-  );
+  const questionList = questions.map((question) => {
+    return (
+      <QuestionCard
+        key={question.id}
+        title={question.title}
+        info={question.info}
+      />
+    );
+  });
+  return <div>{questionList}</div>;
 };
 
 export default Question;
