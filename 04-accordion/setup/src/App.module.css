@@ -1,0 +1,13 @@
+.header {
+  margin-top: 2rem;
+  font-size: 24px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.questionCard {
+  padding: 1rem;
+}

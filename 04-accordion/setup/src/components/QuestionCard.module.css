@@ -1,0 +1,9 @@
+.questionCard {
+  width: 45vw;
+  height: auto;
+  margin: 30px 30px;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.3);
+  background-color: white;
+}
