@@ -4,29 +4,31 @@ import Card from "./components/Card";
 import classes from "./Menu.module.css";
 
 const renderFood = (foodItems) => {
-  foodItems.map((item) => {
+  return foodItems.map((item) => {
     return (
       <Card key={item.id}>
-        <img src={item.img} alt="Food" />
-        <title>{item.title}</title>
-        <div>${item.price}</div>
+        <img src={item.img} alt="Food" className={classes.img} />
+        <div className={classes.foodInfo}>
+          <div className={classes.header}>
+            <span>{item.title}</span>
+            <span>${item.price}</span>
+          </div>
+          <div className={classes.description}>{item.desc}</div>
+        </div>
       </Card>
     );
   });
 };
 
-const Menu = () => {
+const Menu = (props) => {
   let foodItems;
+  let items = props.items;
 
-  foodItems = items.map((item) => {
-    return (
-      <Card key={item.id}>
-        <img src={item.img} alt="Food" />
-        <title>{item.title}</title>
-        <div>${item.price}</div>
-      </Card>
-    );
-  });
+  foodItems = renderFood(items);
+
+  const allHandler = () => {
+    return items;
+  };
 
   const breakfastHandler = () => {
     const breakfastItems = items.filter((item) => {
