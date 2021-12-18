@@ -13,4 +13,5 @@ li.active {
   background-color: black;
   color: white;
   padding: 0.7rem;
+  border-radius: 5px;
 }
