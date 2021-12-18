@@ -1,11 +1,12 @@
 import React from "react";
+import classes from "./Categories.module.css";
 
 const Categories = () => {
   return (
     <nav>
-      <ul>
-        <li>All</li>
-        <li>Breakfast</li>
+      <ul className={classes.ul}>
+        <li className={classes.active}>All</li>
+        <li className={classes.active}>Breakfast</li>
         <li>Lunch</li>
         <li>Shakes</li>
       </ul>

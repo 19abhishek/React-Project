@@ -7,6 +7,7 @@ function App() {
     <main>
       <header className="header">Our Menu</header>
       <Categories />
+      <Menu />
     </main>
   );
 }
