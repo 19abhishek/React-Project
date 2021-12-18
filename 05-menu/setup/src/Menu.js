@@ -26,28 +26,6 @@ const Menu = (props) => {
 
   foodItems = renderFood(items);
 
-  const allHandler = () => {
-    return items;
-  };
-
-  const breakfastHandler = () => {
-    const breakfastItems = items.filter((item) => {
-      return item.category === "breakfast";
-    });
-  };
-
-  const lunchHandler = () => {
-    const lunchItems = items.filter((item) => {
-      return item.category === "lunch";
-    });
-  };
-
-  const shakesHandler = () => {
-    const shakesItems = items.filter((item) => {
-      return items.category === "shakes";
-    });
-  };
-
   return <main>{foodItems}</main>;
 };
 

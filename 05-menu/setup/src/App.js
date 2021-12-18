@@ -11,6 +11,7 @@ function App() {
   const [categories, setCategories] = useState(allCategories);
 
   const filterItems = (category) => {
+    console.log(category);
     if (category === "all") {
       setItems(foodItems);
       return;
