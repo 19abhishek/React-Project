@@ -1,0 +1,8 @@
+* {
+  background: linear-gradient(to right, #4cc9f0, #f72585);
+  z-index: -1;
+}
+
+.calculator {
+  display: grid;
+}
