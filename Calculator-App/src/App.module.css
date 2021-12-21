@@ -1,8 +1,64 @@
-* {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
   background: linear-gradient(to right, #4cc9f0, #f72585);
+  margin: 0;
   z-index: -1;
 }
 
 .calculator {
   display: grid;
+  margin-top: 2rem;
+  justify-content: center;
+  grid-template-columns: repeat(4, 6rem);
+  grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+}
+
+.calculator > button {
+  font-size: 2rem;
+  background-color: rgba(255, 255, 255, 0.75);
+  outline: none;
+  border: 1px solid white;
+}
+
+.calculator > button:hover,
+.calculator > button:focus {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.calculator > button:active {
+  transform: scale(1.02);
+}
+
+.output {
+  grid-column: 1/-1;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 0.75rem;
+}
+
+.output .previousOperand {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.5rem;
+}
+
+.output .currentOperand {
+  color: white;
+  font-size: 2.5rem;
+}
+
+.calculator > button {
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.spanTwo {
+  grid-column: span 2;
 }
