@@ -32,7 +32,7 @@ function App() {
         {jobs.map((currData, idx) => {
           return (
             <button
-              className={classes.btn}
+              className={`${classes.btn} ${idx === value && classes.active}`}
               key={currData.id}
               onClick={() => setValue(idx)}
             >
