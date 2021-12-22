@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10vh;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 5vh;
+}
+
+.btn {
+  background-color: transparent;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+}
+
+.btn:hover,
+.btn.active {
+  background-color: black;
+  color: white;
+}
