@@ -6,28 +6,70 @@ import classes from "./App.module.css";
 import { FaEdit, FaTrash } from "react-icons/fa";
 
 function App() {
-  const [items, setItems] = useState(["Egg", "Bread"]);
+  const [currItem, setCurrItem] = useState("");
+  const [items, setItems] = useState([]);
   const [hasItems, setHasItems] = useState(items.length > 0);
-  const message = "xajnsjnkajsn";
+  const [message, setMessage] = useState("");
+  const [hasMessage, setHasMessage] = useState(message.length > 0);
+
+  const formSubmitHandler = (e) => {
+    e.preventDefault();
+    setItems([...items, currItem]);
+    setCurrItem("");
+  };
+
+  const inputChangeHandler = (e) => {
+    setCurrItem(e.target.value);
+  };
+
+  const deleteClickHandler = (idx) => {
+    const newItem = items.filter((item, index) => {
+      if (idx !== index) {
+        return item;
+      }
+    });
+    setItems(newItem);
+    setMessage("Item Deleted");
+    setHasMessage(true);
+    setTimeout(() => {
+      setHasMessage(false);
+      setMessage("");
+    }, 2000);
+  };
+
+  const clearAllHandler = () => {
+    setItems([]);
+  };
+
+  useEffect(() => {
+    setHasItems(items.length > 0);
+  }, [items]);
+
   return (
     <Card className={classes.card}>
-      {/* <div className={classes.error}>{message}</div> */}
+      {hasMessage && <div className={classes.error}>{message}</div>}
       <header className={classes.header}>Grocery Bud</header>
-      <form className={classes.form}>
-        <input className={classes.input} placeholder="e.g eggs" type="text" />
+      <form className={classes.form} onSubmit={formSubmitHandler}>
+        <input
+          className={classes.input}
+          placeholder="e.g eggs"
+          type="text"
+          value={currItem}
+          onChange={inputChangeHandler}
+        />
         <button className={classes.btn}>Submit</button>
       </form>
       <div>
-        {items.map((item) => {
+        {items.map((item, idx) => {
           return (
-            <div className={classes.item}>
+            <div key={idx} className={classes.item}>
               <span>{item}</span>
               <div>
                 <button>
-                  <FaEdit />
+                  <FaEdit className={classes.editBtn} />
                 </button>
-                <button>
-                  <FaTrash />
+                <button onClick={deleteClickHandler.bind(null, idx)}>
+                  <FaTrash className={classes.trashBtn} />
                 </button>
               </div>
             </div>
@@ -35,7 +77,11 @@ function App() {
         })}
       </div>
       <div className={classes.clear}>
-        {hasItems && <button className={classes.clearBtn}>Clear Items</button>}
+        {hasItems && (
+          <button className={classes.clearBtn} onClick={clearAllHandler}>
+            Clear Items
+          </button>
+        )}
       </div>
     </Card>
   );
