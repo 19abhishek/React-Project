@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import List from "./List";
-import Alert from "./Alert";
 import Card from "./components/Card";
 import classes from "./App.module.css";
 import { FaEdit, FaTrash } from "react-icons/fa";
@@ -11,11 +9,26 @@ function App() {
   const [hasItems, setHasItems] = useState(items.length > 0);
   const [message, setMessage] = useState("");
   const [hasMessage, setHasMessage] = useState(message.length > 0);
+  const [itemAdded, setItemAdded] = useState(false);
+  const [itemMessage, setItemMessage] = useState("");
+  const [beforeEditValue, setBeforeEditingValue] = useState("");
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
-    setItems([...items, currItem]);
+    if (beforeEditValue.length > 0) {
+      const idx = items.indexOf(beforeEditValue);
+      items[idx] = currItem;
+      setBeforeEditingValue("");
+    } else {
+      setItems([...items, currItem]);
+    }
     setCurrItem("");
+    setItemAdded(true);
+    setItemMessage("Item Added");
+    setTimeout(() => {
+      setItemMessage("");
+      setItemAdded(false);
+    }, 2000);
   };
 
   const inputChangeHandler = (e) => {
@@ -37,6 +50,13 @@ function App() {
     }, 2000);
   };
 
+  const editClickHandler = (idx) => {
+    const val = items[idx];
+    setCurrItem(val);
+    setBeforeEditingValue(val);
+    // console.log(this);
+  };
+
   const clearAllHandler = () => {
     setItems([]);
   };
@@ -48,6 +68,7 @@ function App() {
   return (
     <Card className={classes.card}>
       {hasMessage && <div className={classes.error}>{message}</div>}
+      {itemAdded && <div className={classes.added}>{itemMessage}</div>}
       <header className={classes.header}>Grocery Bud</header>
       <form className={classes.form} onSubmit={formSubmitHandler}>
         <input
@@ -65,7 +86,7 @@ function App() {
             <div key={idx} className={classes.item}>
               <span>{item}</span>
               <div>
-                <button>
+                <button onClick={editClickHandler.bind(this, idx)}>
                   <FaEdit className={classes.editBtn} />
                 </button>
                 <button onClick={deleteClickHandler.bind(null, idx)}>

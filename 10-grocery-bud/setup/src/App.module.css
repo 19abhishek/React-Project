@@ -18,6 +18,16 @@
   margin-left: 5vw;
 }
 
+.added {
+  position: absolute;
+  width: 40vw;
+  background-color: #d3f9d8;
+  color: #2f9e44;
+  border-radius: 5px;
+  margin-top: 1rem;
+  margin-left: 5vw;
+}
+
 .header {
   font-size: 24px;
   font-weight: bold;
