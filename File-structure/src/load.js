@@ -1,31 +1,28 @@
-import React from "react";
-import Load from "./load";
+import React, { useState } from "react";
 
-function load({ data }) {
-  return (
-    <div>
-      {data.map((cData) =>
-        cData.isFolder ? (
-          <Load folder={cData} />
-        ) : (
-          <div>
-            cData.name
-            <br />
-          </div>
-        )
-      )}
-      {/* {data.map((cData) => (
-        cData.isFolder ? (
-          <Load folder={cData} />
-        ) : (
-          <div>
-            cData.name
-            <br />
-          </div>
-        );
-      ))} */}
-    </div>
-  );
+import Folder from "./Folder";
+
+function Load({ data }) {
+  const [expand, setExpand] = useState(false);
+
+  if (data.isFolder) {
+    return (
+      <div>
+        <div onClick={() => setExpand(!expand)} style={{ padding: "0px" }}>
+          {data.name}
+        </div>
+        <div style={{ display: expand ? "block" : "none", marginLeft: "20px" }}>
+          {data.items.map((cd, idx) => (
+            <div key={idx}>
+              <Load data={cd} />
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  } else {
+    return <div>{data.name}</div>;
+  }
 }
 
-export default load;
+export default Load;

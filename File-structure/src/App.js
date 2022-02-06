@@ -1,6 +1,6 @@
 import data from "./data";
 
-import Load from "./load";
+import Load from "./Load";
 
 function App() {
   console.log(data);
