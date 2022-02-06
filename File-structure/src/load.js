@@ -11,7 +11,7 @@ function Load({ data }) {
         <div onClick={() => setExpand(!expand)} style={{ padding: "0px" }}>
           {data.name}
         </div>
-        <div style={{ display: expand ? "block" : "none", marginLeft: "20px" }}>
+        <div style={{ display: expand ? "block" : "none", marginLeft: "15px" }}>
           {data.items.map((cd, idx) => (
             <div key={idx}>
               <Load data={cd} />
